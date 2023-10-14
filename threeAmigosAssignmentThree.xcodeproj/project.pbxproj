@@ -16,6 +16,8 @@
 		0281C4162AD77BFE00E53C74 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0281C4152AD77BFE00E53C74 /* AppController.swift */; };
 		0281C4182AD77C5700E53C74 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0281C4172AD77C5700E53C74 /* SettingsController.swift */; };
 		0281C41A2AD77C8200E53C74 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0281C4192AD77C8200E53C74 /* CircleProgressBar.swift */; };
+		A8784EFD2ADA00B700C89502 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8784EFC2ADA00B700C89502 /* GameViewController.swift */; };
+		A8784F032ADA089500C89502 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8784F022ADA089500C89502 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		0281C4152AD77BFE00E53C74 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		0281C4172AD77C5700E53C74 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		0281C4192AD77C8200E53C74 /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressBar.swift; sourceTree = "<group>"; };
+		A8784EFC2ADA00B700C89502 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A8784F022ADA089500C89502 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +70,14 @@
 				0281C4032AD7528E00E53C74 /* SceneDelegate.swift */,
 				0281C4052AD7528E00E53C74 /* ViewController.swift */,
 				0281C4072AD7528E00E53C74 /* Main.storyboard */,
-				0281C40A2AD7529300E53C74 /* Assets.xcassets */,
 				0281C40C2AD7529300E53C74 /* LaunchScreen.storyboard */,
 				0281C40F2AD7529300E53C74 /* Info.plist */,
 				0281C4152AD77BFE00E53C74 /* AppController.swift */,
 				0281C4172AD77C5700E53C74 /* SettingsController.swift */,
 				0281C4192AD77C8200E53C74 /* CircleProgressBar.swift */,
+				A8784EFC2ADA00B700C89502 /* GameViewController.swift */,
+				A8784F022ADA089500C89502 /* GameScene.swift */,
+				0281C40A2AD7529300E53C74 /* Assets.xcassets */,
 			);
 			path = threeAmigosAssignmentThree;
 			sourceTree = "<group>";
@@ -104,7 +110,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					0281C3FD2AD7528E00E53C74 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -147,7 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8784EFD2ADA00B700C89502 /* GameViewController.swift in Sources */,
 				0281C41A2AD77C8200E53C74 /* CircleProgressBar.swift in Sources */,
+				A8784F032ADA089500C89502 /* GameScene.swift in Sources */,
 				0281C4062AD7528E00E53C74 /* ViewController.swift in Sources */,
 				0281C4182AD77C5700E53C74 /* SettingsController.swift in Sources */,
 				0281C4022AD7528E00E53C74 /* AppDelegate.swift in Sources */,
@@ -214,6 +222,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -274,6 +283,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -299,6 +309,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = threeAmigosAssignmentThree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -326,6 +337,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = threeAmigosAssignmentThree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
