@@ -16,6 +16,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var scoreLabel: SKLabelNode!
     private var score: Int = 0
+    private var rewardMult: Int = 1
 
     // collision bit masks
     private struct PhysicsCategory {
@@ -124,7 +125,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     // updates score and repositions node
     func playerReachedGoal() {
-        score += 1
+        
+        if Date() >= Calendar.current.date(bySettingHour:11, minute:0, second:0, of:Date())! && Date() <= Calendar.current.date(bySettingHour:16, minute:0, second:0, of:Date())! {
+            rewardMult = 3
+        }
+        else {
+            rewardMult = 1
+        }
+        score += 1 * rewardMult
         scoreLabel.text = "Score: \(score)"
         //goal.color = .red // Change color for visual debugging
         repositionGoal()

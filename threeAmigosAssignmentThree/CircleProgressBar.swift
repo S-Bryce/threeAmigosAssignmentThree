@@ -17,18 +17,44 @@ class CircleProgressBar: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        createCircularPath()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        createCircularPath()
     }
     
     func createCircularPath() {
         
-        // TODO: Draw the rest of the owl...
+        let shape = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0),
+                                 radius: 100,
+                                 startAngle: startPoint,
+                                 endAngle: endPoint,
+                                 clockwise: true)
+        circleLayer.path = shape.cgPath
+        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.lineWidth = 10.0
+        circleLayer.strokeEnd = 1.0
+        circleLayer.strokeColor = UIColor.clear.cgColor
+        circleLayer.lineCap = .round
+        layer.addSublayer(circleLayer)
+        
+        progressLayer.path = shape.cgPath
+        progressLayer.fillColor = UIColor.clear.cgColor
+        progressLayer.lineWidth = 10.0
+        progressLayer.strokeEnd = 0.0
+        progressLayer.lineCap = .round
+        layer.addSublayer(progressLayer)
     }
     
-    func progressAnimation(duration: TimeInterval) {
-        // Have a duration to control how quickly the bar fills up, might allow for smoother animation?
+    func increaseBy(steps: Int, color: CGColor = UIColor.green.cgColor) {
+        let progressAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        progressAnimation.toValue = Float(steps)/Float(storage.integer(forKey: "dailyGoal"))
+        progressAnimation.fillMode = .forwards
+        progressAnimation.isRemovedOnCompletion = false
+        progressAnimation.duration = 2
+        progressLayer.add(progressAnimation, forKey:"progressAnim")
+        progressLayer.strokeColor = color
     }
 }
