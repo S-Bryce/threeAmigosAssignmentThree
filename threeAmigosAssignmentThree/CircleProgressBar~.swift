@@ -54,8 +54,7 @@ class CircleProgressBar: UIView {
         progressAnimation.fillMode = .forwards
         progressAnimation.isRemovedOnCompletion = false
         progressAnimation.duration = 2
-        progressLayer.strokeColor = color
         progressLayer.add(progressAnimation, forKey:"progressAnim")
-        
+        progressLayer.strokeColor = color
     }
 }

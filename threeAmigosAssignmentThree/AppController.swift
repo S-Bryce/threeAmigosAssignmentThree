@@ -37,6 +37,9 @@ class AppController: UIViewController {
         if storage.object(forKey: "dailyGoal") == nil {
             storage.set(1000, forKey: "dailyGoal")
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.monitorActivity()
         self.monitorSteps()
     }
@@ -107,12 +110,13 @@ class AppController: UIViewController {
                     // if no errors, update the main UI
                     if let data = pedData {
                         
-                        if self.previousSteps == -1 {
-                            self.previousSteps = data.numberOfSteps.intValue
-                        }
-                        
                         // display the output directly on the phone
                         DispatchQueue.main.async {
+                            
+                            if self.previousSteps == -1 {
+                                self.previousSteps = data.numberOfSteps.intValue
+                                self.progressBar.increaseBy(steps: data.numberOfSteps.intValue)
+                            }
                             
                             let stepsTaken = data.numberOfSteps.intValue
                             let newSteps = self.previousSteps + (stepsTaken - self.previousSteps)
@@ -131,7 +135,8 @@ class AppController: UIViewController {
                                 self.dailyGoalLabel.isHidden = true
                             }
                             
-                            self.progressBar.increaseBy(steps: (stepsTaken - self.previousSteps))
+                            //self.progressBar.increaseBy(steps: (stepsTaken - self.previousSteps))
+                            self.progressBar.increaseBy(steps: newSteps)
                             
                             self.previousSteps = newSteps
                         }
