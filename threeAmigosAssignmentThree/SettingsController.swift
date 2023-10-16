@@ -30,7 +30,6 @@ class SettingsController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if self.dailyGoalField.hasText{
-            print("Wrote changes")
             storage.set(self.dailyGoalField.text, forKey: "dailyGoal")
         }
         self.dailyGoalField.resignFirstResponder()
